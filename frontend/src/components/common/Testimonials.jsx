@@ -23,7 +23,7 @@ const Testimonials = () => {
     const fetchTestimonials = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:5000/api/testimonials');
+        const response = await fetch('https://acceptable-bravery-production-302d.up.railway.app/api/testimonials');
         
         if (!response.ok) {
           throw new Error('Failed to fetch testimonials');
@@ -119,7 +119,7 @@ const Testimonials = () => {
         console.log('No auth token, simulating submission for demo');
       }
 
-      const response = await fetch('http://localhost:5000/api/testimonials', {
+      const response = await fetch('https://acceptable-bravery-production-302d.up.railway.app/api/testimonials', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

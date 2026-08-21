@@ -34,7 +34,7 @@ const Profile = () => {
         return;
       }
 
-      const response = await fetch('http://localhost:5000/api/user/profile', {
+      const response = await fetch('https://acceptable-bravery-production-302d.up.railway.app/api/user/profile', {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -144,7 +144,7 @@ const Profile = () => {
   const updateProfile = async (profileData) => {
     const token = localStorage.getItem('authToken');
     
-    const response = await fetch('http://localhost:5000/api/user/profile', {
+    const response = await fetch('https://acceptable-bravery-production-302d.up.railway.app/api/user/profile', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -164,7 +164,7 @@ const Profile = () => {
   const updatePassword = async (passwordData) => {
     const token = localStorage.getItem('authToken');
     
-    const response = await fetch('http://localhost:5000/api/user/change-password', {
+    const response = await fetch('https://acceptable-bravery-production-302d.up.railway.app/api/user/change-password', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

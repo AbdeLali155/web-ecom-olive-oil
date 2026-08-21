@@ -24,7 +24,7 @@ const FeaturedProducts = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:5000/api/products")
+    fetch("https://acceptable-bravery-production-302d.up.railway.app/api/products")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
@@ -91,11 +91,11 @@ const FeaturedProducts = () => {
     
     // If it's a relative path, construct the full URL
     if (imagePath.startsWith('/uploads/')) {
-      return `http://localhost:5000${imagePath}`;
+      return `https://acceptable-bravery-production-302d.up.railway.app${imagePath}`;
     }
     
     // If it's just a filename, construct the full path
-    return `http://localhost:5000/uploads/products/${imagePath}`;
+    return `https://acceptable-bravery-production-302d.up.railway.app/uploads/products/${imagePath}`;
   };
 
   if (loading) {

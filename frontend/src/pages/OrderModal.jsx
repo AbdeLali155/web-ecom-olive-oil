@@ -79,7 +79,7 @@ const OrderModal = ({ product, quantity, onClose, cartItems, navigate }) => {
       const token = localStorage.getItem('authToken');
       if (!token) return;
 
-      const response = await fetch('http://localhost:5000/api/user/profile', {
+      const response = await fetch('https://acceptable-bravery-production-302d.up.railway.app/api/user/profile', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -189,7 +189,7 @@ const OrderModal = ({ product, quantity, onClose, cartItems, navigate }) => {
 
       console.log('Sending orderData:', orderData);
 
-      const response = await fetch('http://localhost:5000/api/checkout', {
+      const response = await fetch('https://acceptable-bravery-production-302d.up.railway.app/api/checkout', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

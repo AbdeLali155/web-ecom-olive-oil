@@ -29,11 +29,11 @@ const ProductDetail = () => {
     
     // If it's a relative path, construct the full URL
     if (imagePath.startsWith('/uploads/')) {
-      return `http://localhost:5000${imagePath}`;
+      return `https://acceptable-bravery-production-302d.up.railway.app${imagePath}`;
     }
     
     // If it's just a filename, construct the full path
-    return `http://localhost:5000/uploads/products/${imagePath}`;
+    return `https://acceptable-bravery-production-302d.up.railway.app/uploads/products/${imagePath}`;
   };
 
   // Function to handle image error and provide fallback
@@ -75,7 +75,7 @@ const ProductDetail = () => {
       setLoading(true);
       setError(null);
       try {
-        const response = await fetch('http://localhost:5000/api/products');
+        const response = await fetch('https://acceptable-bravery-production-302d.up.railway.app/api/products');
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }

@@ -76,7 +76,7 @@ const Footer = () => {
       const token = localStorage.getItem('authToken');
       if (!token) return;
 
-      const response = await fetch('http://localhost:5000/api/user/profile', {
+      const response = await fetch('https://acceptable-bravery-production-302d.up.railway.app/api/user/profile', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -131,7 +131,7 @@ const Footer = () => {
     try {
       const token = localStorage.getItem('authToken');
       
-      const response = await fetch('http://localhost:5000/api/testimonials', {
+      const response = await fetch('https://acceptable-bravery-production-302d.up.railway.app/api/testimonials', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

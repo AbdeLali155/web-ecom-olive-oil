@@ -38,7 +38,7 @@ const AdminDashboard = () => {
   const [error, setError] = useState(null);
 
   // Base API URL
-  const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+  const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://acceptable-bravery-production-302d.up.railway.app/api';
 
   // Fetch data on component mount and tab change
   useEffect(() => {

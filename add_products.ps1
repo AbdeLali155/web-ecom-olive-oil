@@ -9,7 +9,7 @@ $products = @(
 )
 
 foreach ($p in $products) {
-    $imageUrl = "http://localhost:5000/uploads/products/$($p.image)"
+    $imageUrl = "https://acceptable-bravery-production-302d.up.railway.app/uploads/products/$($p.image)"
     $body = @{
         name = $p.name
         price = $p.price
@@ -21,6 +21,6 @@ foreach ($p in $products) {
     } | ConvertTo-Json
 
     Write-Host "Adding: $($p.name)..."
-    Invoke-RestMethod -Uri "http://localhost:5000/api/products" -Method Post -ContentType "application/json" -Body $body
+    Invoke-RestMethod -Uri "https://acceptable-bravery-production-302d.up.railway.app/api/products" -Method Post -ContentType "application/json" -Body $body
     Write-Host "---"
 }

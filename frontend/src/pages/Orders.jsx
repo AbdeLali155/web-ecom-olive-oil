@@ -10,7 +10,7 @@ const Orders = () => {
     const fetchOrders = async () => {
       const token = localStorage.getItem('authToken');
       try {
-        const res = await fetch('http://localhost:5000/api/orders/my-orders', {
+        const res = await fetch('https://acceptable-bravery-production-302d.up.railway.app/api/orders/my-orders', {
           headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json',
