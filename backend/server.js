@@ -7,7 +7,10 @@ const cors = require('cors');
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://web-ecom-olive-oil-sage.vercel.app',
+  credentials: true
+}));
 app.use(express.json());
 
 console.log("Connecting to:", process.env.MONGO_URI);
