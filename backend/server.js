@@ -3,13 +3,14 @@ const path = require('path');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
-
+const helmet = require('helmet');
 const { Logtail } = require("@logtail/node");
 dotenv.config();
 const logtail = new Logtail("TLHYytVT9TEwm39rxZSFCbV1", {
   endpoint: "https://s2699047.eu-central-1a.betterstackdata.com"
 });
 const app = express();
+app.use(helmet());
 app.set('trust proxy', 1);
 app.use(cors({
   origin: 'https://web-ecom-olive-oil-sage.vercel.app',
