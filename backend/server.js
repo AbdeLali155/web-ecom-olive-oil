@@ -4,14 +4,24 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
 
+const { Logtail } = require("@logtail/node");
 dotenv.config();
-
+const logtail = new Logtail("TLHYytVT9TEwm39rxZSFCbV1", {
+  endpoint: "https://s2699047.eu-central-1a.betterstackdata.com"
+});
 const app = express();
 app.use(cors({
   origin: 'https://web-ecom-olive-oil-sage.vercel.app',
   credentials: true
 }));
 app.use(express.json());
+app.use((req, res, next) => {
+  logtail.info(`${req.method} ${req.originalUrl}`, {
+    ip: req.ip,
+    userAgent: req.get('user-agent')
+  });
+  next();
+});
 
 console.log("Connecting to:", process.env.MONGO_URI);
 
