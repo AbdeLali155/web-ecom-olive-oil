@@ -163,13 +163,16 @@ const OrderModal = ({ product, quantity, onClose, cartItems, navigate }) => {
       }
 
       const orderData = {
-        items: cartItems && cartItems.length > 0 ? cartItems : [{
-          name: product.name,
-          size: product.size,
-          price: product.price,
-          quantity: quantity,
-          image: product.image
-        }],
+        items: cartItems && cartItems.length > 0 
+  ? cartItems.map(item => ({ ...item, productId: item._id }))
+  : [{
+      productId: product._id,
+      name: product.name,
+      size: product.size,
+      price: product.price,
+      quantity: quantity,
+      image: product.image
+    }],
         subtotal: calculateSubtotal(),
         deliveryFee: formData.deliveryMethod === 'home' ? calculateDeliveryFee() : 0,
         total: calculateTotal(),
