@@ -75,13 +75,13 @@ const FeaturedProducts = () => {
   // Function to handle image error and provide fallback
   const handleImageError = (e) => {
     console.error("Image failed to load:", e.target.src);
-    e.target.src = "https://via.placeholder.com/400x300/f8f5f0/4e4219?text=Olive+Oil"; // Fallback image
+    e.target.src = "https://acceptable-bravery-production-302d.up.railway.app/uploads/products/product-1.jpg"; // Fallback image
   };
 
   // Function to get the correct image URL
   const getImageUrl = (imagePath) => {
     if (!imagePath) {
-      return "https://via.placeholder.com/400x300/f8f5f0/4e4219?text=Olive+Oil";
+      return "https://acceptable-bravery-production-302d.up.railway.app/uploads/products/product-1.jpg";
     }
     
     // If it's already a full URL, return as is
